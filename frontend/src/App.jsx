@@ -427,7 +427,7 @@ function App() {
     async function napDuLieu() {
       try {
         setDangTai(true)
-        const response = await fetch('/dashboard-data.json')
+        const response = await fetch(`${import.meta.env.BASE_URL}dashboard-data.json`)
         if (!response.ok) {
           throw new Error('Không đọc được dữ liệu bảng điều hành.')
         }
