@@ -742,7 +742,7 @@ function App() {
                   <CartesianGrid stroke="rgba(255,255,255,0.08)" horizontal={false} />
                   <XAxis type="number" stroke="#93a9ca" tickFormatter={dinhDangTienRutGon} />
                   <YAxis dataKey="ten" type="category" stroke="#eef5ff" width={64} />
-                  <Tooltip content={<MauTooltip formatter={(value) => dinhDangTien(value)} />} />
+                  <Tooltip cursor={false} content={<MauTooltip formatter={(value) => dinhDangTien(value)} />} />
                   <Bar dataKey="revenue" name="Doanh thu" fill={MAU_THEO_CHI_SO.revenue} radius={[0, 12, 12, 0]} />
                 </BarChart>
               </ResponsiveContainer>
@@ -754,7 +754,7 @@ function App() {
                   <CartesianGrid stroke="rgba(255,255,255,0.08)" vertical={false} />
                   <XAxis dataKey="thang" stroke="#93a9ca" />
                   <YAxis stroke="#93a9ca" width={78} tickMargin={8} tickFormatter={dinhDangTienRutGon} />
-                  <Tooltip content={<MauTooltip formatter={(value) => dinhDangTien(value)} />} />
+                  <Tooltip cursor={false} content={<MauTooltip formatter={(value) => dinhDangTien(value)} />} />
                   <Legend />
                   {duLieuXuHuongTheoChieu(banGhiDaLoc, 'registration_type', 'revenue').categories.map((item, index) => (
                     <Bar key={item} dataKey={item} stackId="a" fill={MAU_HE[index % MAU_HE.length]} />
