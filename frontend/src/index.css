@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap');
+
+:root {
+  --brand-primary: #00b8ee;
+  --brand-secondary: #1f69d8;
+  --brand-aqua: #52d7c9;
+  --brand-sky: #7ed7ff;
+  --brand-gold: #f6b332;
+  --bg-deep: #04101f;
+  --bg-panel: #0a2244;
+  --bg-panel-2: #0b1a33;
+  --surface-soft: rgba(255, 255, 255, 0.05);
+  --surface-strong: rgba(12, 33, 67, 0.92);
+  --border-soft: rgba(91, 179, 235, 0.18);
+  --text-main: #eef5ff;
+  --text-muted: #9bb9de;
+  font-family: 'Manrope', sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color: var(--text-main);
+  background:
+    radial-gradient(circle at 10% 14%, rgba(0, 184, 238, 0.24), transparent 24%),
+    radial-gradient(circle at 88% 10%, rgba(31, 105, 216, 0.18), transparent 22%),
+    radial-gradient(circle at 76% 70%, rgba(246, 179, 50, 0.10), transparent 18%),
+    linear-gradient(145deg, #031120 0%, #07224a 40%, #061528 100%);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+  margin: 0;
+}
+
+body {
+  min-height: 100vh;
+}
+
+button,
+input {
+  font: inherit;
+}
