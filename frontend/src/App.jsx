@@ -419,7 +419,6 @@ function App() {
   const [topNChiNhanh, setTopNChiNhanh] = useState(12)
   const [chiSoNhanSu, setChiSoNhanSu] = useState('revenue')
   const [topNNhanSu, setTopNNhanSu] = useState(12)
-  const [chiNhanhTapTrung, setChiNhanhTapTrung] = useState('Tất cả')
   const luaChonSoMuc = [10, 12, 15, 20].map((item) => ({ value: item, label: `${item} mục` }))
 
   useEffect(() => {
@@ -484,9 +483,9 @@ function App() {
   const topChiNhanh = duLieuXepHangChiNhanh(banGhiDaLoc, chiSoChiNhanh, topNChiNhanh)
   const maTranChiNhanh = duLieuMaTranChiNhanh(banGhiDaLoc, chiSoChiNhanh, topNChiNhanh)
   const tanXaChiNhanh = duLieuTanXaChiNhanh(banGhiDaLoc, topNChiNhanh)
-  const topNhanSu = duLieuXepHangNhanSu(banGhiDaLoc, chiSoNhanSu, topNNhanSu, chiNhanhTapTrung)
-  const maTranNhanSu = duLieuMaTranNhanSu(banGhiDaLoc, chiSoNhanSu, topNNhanSu, chiNhanhTapTrung)
-  const tanXaNhanSu = duLieuTanXaNhanSu(banGhiDaLoc, topNNhanSu, chiNhanhTapTrung)
+  const topNhanSu = duLieuXepHangNhanSu(banGhiDaLoc, chiSoNhanSu, topNNhanSu, 'Tất cả')
+  const maTranNhanSu = duLieuMaTranNhanSu(banGhiDaLoc, chiSoNhanSu, topNNhanSu, 'Tất cả')
+  const tanXaNhanSu = duLieuTanXaNhanSu(banGhiDaLoc, topNNhanSu, 'Tất cả')
   const chieuCaoXepHangChiNhanh = tinhChieuCaoXepHang(topChiNhanh, 'ten', 12)
   const chieuCaoXepHangNhanSu = tinhChieuCaoXepHang(topNhanSu, 'tenNhanSu', 16)
   const mauChiSoChiNhanh = MAU_THEO_CHI_SO[chiSoChiNhanh] || MAU_THEO_CHI_SO.revenue
@@ -921,17 +920,7 @@ function App() {
 
       {tabDangChon === 'nhan-su' && (
         <section className="noi-dung-tab">
-          <div className="bo-loc-cuc-bo">
-            <div className="bo-loc-cuc-bo__item">
-              <span>Chi nhánh tập trung</span>
-              <Select
-                options={[{ value: 'Tất cả', label: 'Tất cả' }, ...taoTuyChonSelect(danhSachChiNhanh)]}
-                value={{ value: chiNhanhTapTrung, label: chiNhanhTapTrung }}
-                onChange={(value) => setChiNhanhTapTrung(value.value)}
-                styles={reactSelectStyles}
-                isSearchable={false}
-              />
-            </div>
+          <div className="bo-loc-cuc-bo bo-loc-cuc-bo--2cot">
             <div className="bo-loc-cuc-bo__item">
               <span>Chỉ số</span>
               <Select
